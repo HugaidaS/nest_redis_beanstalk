@@ -1,0 +1,52 @@
+{
+  "AWSEBDockerrunVersion": 3,
+  "multicontainer": {
+    "dockerLabels": {
+      "app": "backend",
+      "version": "1.0"
+    },
+    "containers": [
+      {
+        "name": "nginx",
+        "image": "nginx:latest",
+        "essential": true,
+        "memory": 128,
+        "cpu": 128,
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 80
+          }
+        ],
+        "links": ["backend","redis"]
+      },
+      {
+        "name": "backend",
+        "image": "546337934149.dkr.ecr.us-east-1.amazonaws.com/nest-api",
+        "essential": true,
+        "memory": 512,
+        "cpu": 256,
+        "portMappings": [
+          {
+            "hostPort": 3000,
+            "containerPort": 3000
+          }
+        ],
+        "links": ["redis"]
+      },
+      {
+        "name": "redis",
+        "image": "redis:latest",
+        "essential": true,
+        "memory": 256,
+        "cpu": 128,
+        "portMappings": [
+          {
+            "hostPort": 6379,
+            "containerPort": 6379
+          }
+        ]
+      }
+    ]
+  }
+}
