@@ -39,9 +39,7 @@ If you have new ideas and question, feel free to open a pull request or submit a
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Instagram - [https://nestjs.com](https://nestjs.com/)
-- Threads - [@nestframework](https://twitter.com/nestframework)
+- Author - [Victoria Akhmatova](https://www.instagram.com/toria_dev)
 
 ## License
 
